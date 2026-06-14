@@ -5,7 +5,7 @@
 <h2>📚 Educational resources for IGNOU's Master of Arts in Psychology (MAPC) program.</h2>
 <h4 align="center"><i>Offline-Ready Interactive Solved Previous Year Question Papers for MPC-001 to MPC-006</i></h4> 
 <div align="center">
-  <a href="https://mohdusaid.github.io/IGNOU-MAPC/"  target="_blank">
+  <a href="https://shirish-psych-ncr.github.io/IGNOU-MAPC/"  target="_blank">
     <img src="https://img.shields.io/badge/Open-Website-blueviolet?style=for-the-badge&logo=github" alt="Open Website">
   </a>
 </div>
