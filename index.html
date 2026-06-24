@@ -50,6 +50,9 @@
       --green: #4e7d52;
       --red: #b64d4b;
       --blue: #4f6f91;
+      --text-primary: #20231f;
+      --text-secondary: #4a5144;
+      --text-tertiary: #5a6154;
     }
     
     body.dark {
@@ -65,6 +68,9 @@
       --green: #82b884;
       --red: #df817e;
       --blue: #91acd0;
+      --text-primary: #f2eee4;
+      --text-secondary: #d8ddd0;
+      --text-tertiary: #c8cdc0;
     }
 
     /* Dynamic Gradient Background - matching course pages */
@@ -206,7 +212,7 @@
   <div id="dark-overlay" class="fixed inset-0 bg-gray-900 opacity-0 dark:opacity-90 -z-5 transition-opacity duration-500 pointer-events-none"></div>
 
   <!-- Skip to Content -->
-  <a href="#main-content" class="sr-only focus:not-sr-only absolute top-4 left-4 bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 hover:bg-indigo-700 transition-colors">
+  <a href="#main-content" class="sr-only focus:not-sr-only absolute top-4 left-4 bg-[var(--accent)] text-white px-4 py-2 rounded-lg shadow-lg z-50 hover:bg-[var(--accent-strong)] transition-colors">
     Skip to main content
   </a>
 
@@ -216,15 +222,15 @@
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center space-x-3">
           <span class="text-3xl">🧠</span>
-          <span class="text-xl font-bold text-white">IGNOU Psychology</span>
+          <span class="text-xl font-bold" style="color: var(--text-primary);">IGNOU Psychology</span>
         </div>
         <div class="flex items-center space-x-4">
           <!-- Theme Toggle -->
           <button id="theme-toggle" class="p-2 rounded-full glass hover:bg-white/20 transition-all" aria-label="Toggle dark mode">
-            <svg id="sun-icon" class="w-6 h-6 text-yellow-300 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg id="sun-icon" class="w-6 h-6 hidden dark:block" style="color: var(--gold);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
             </svg>
-            <svg id="moon-icon" class="w-6 h-6 text-white block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg id="moon-icon" class="w-6 h-6 block dark:hidden" style="color: var(--text-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
             </svg>
           </button>
@@ -239,24 +245,24 @@
       <div class="floating mb-8">
         <span class="text-8xl md:text-9xl">🎓</span>
       </div>
-      <h1 class="hero-title text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
+      <h1 class="hero-title text-5xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-lg" style="color: var(--text-primary);">
         IGNOU Psychology<br>
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 via-pink-200 to-purple-200">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-[var(--gold)] via-[var(--green)] to-[var(--blue)]">
           Study Map Hub
         </span>
       </h1>
-      <p class="text-xl md:text-2xl text-white/90 max-w-2xl mx-auto mb-10 leading-relaxed">
+      <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-10 leading-relaxed" style="color: var(--text-secondary);">
         Master your psychology courses with our comprehensive, interactive study guides. 
         Choose from core theory subjects and practical lab components below.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#core-psychology" class="inline-flex items-center justify-center bg-white text-indigo-800 font-semibold py-4 px-10 rounded-full shadow-2xl hover:bg-gray-100 hover:scale-105 transition-all duration-300">
+        <a href="#core-psychology" class="inline-flex items-center justify-center bg-[var(--accent)] text-white font-semibold py-4 px-10 rounded-full shadow-2xl hover:bg-[var(--accent-strong)] hover:scale-105 transition-all duration-300">
           <span>Start Studying</span>
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
         </a>
-        <a href="#practical-lab" class="inline-flex items-center justify-center glass text-white font-semibold py-4 px-10 rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-300">
+        <a href="#practical-lab" class="inline-flex items-center justify-center glass font-semibold py-4 px-10 rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-300" style="color: var(--text-primary);">
           Explore Lab Courses
         </a>
       </div>
@@ -264,23 +270,23 @@
       <!-- Quick Stats -->
       <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-lg mx-auto">
         <div class="glass rounded-xl p-4">
-          <div class="text-3xl font-bold text-white">9</div>
-          <div class="text-sm text-white/80">Courses</div>
+          <div class="text-3xl font-bold" style="color: var(--text-primary);">9</div>
+          <div class="text-sm" style="color: var(--text-secondary);">Courses</div>
         </div>
         <div class="glass rounded-xl p-4">
-          <div class="text-3xl font-bold text-white">2</div>
-          <div class="text-sm text-white/80">Categories</div>
+          <div class="text-3xl font-bold" style="color: var(--text-primary);">2</div>
+          <div class="text-sm" style="color: var(--text-secondary);">Categories</div>
         </div>
         <div class="glass rounded-xl p-4">
-          <div class="text-3xl font-bold text-white">∞</div>
-          <div class="text-sm text-white/80">Knowledge</div>
+          <div class="text-3xl font-bold" style="color: var(--text-primary);">∞</div>
+          <div class="text-sm" style="color: var(--text-secondary);">Knowledge</div>
         </div>
       </div>
     </div>
     
     <!-- Scroll Indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-      <svg class="w-8 h-8 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-8 h-8" style="color: var(--text-secondary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
       </svg>
     </div>
@@ -295,41 +301,41 @@
       <div class="glass rounded-2xl p-6 mb-12 shadow-2xl">
         <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
           <div class="relative w-full md:w-2/3">
-            <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5" style="color: var(--text-tertiary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
             <input 
               type="text" 
               id="search-input" 
               placeholder="Search by course code, title, or keywords..." 
-              class="search-input w-full pl-12 pr-4 py-3 rounded-xl bg-white/80 dark:bg-gray-800/80 border border-gray-300 dark:border-gray-600 text-gray-800 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all"
+              class="search-input w-full pl-12 pr-4 py-3 rounded-xl bg-white/80 dark:bg-gray-800/80 border border-[var(--line)] text-[var(--text-primary)] placeholder-[var(--text-tertiary)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] transition-all"
               aria-label="Search courses"
             />
           </div>
           <div class="flex gap-2">
-            <button id="filter-all" class="filter-btn active px-4 py-2 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors" data-filter="all">
+            <button id="filter-all" class="filter-btn active px-4 py-2 rounded-lg bg-[var(--accent)] text-white font-medium hover:bg-[var(--accent-strong)] transition-colors" data-filter="all">
               All
             </button>
-            <button id="filter-theory" class="filter-btn px-4 py-2 rounded-lg glass text-white font-medium hover:bg-white/20 transition-colors" data-filter="theory">
+            <button id="filter-theory" class="filter-btn px-4 py-2 rounded-lg glass font-medium hover:bg-white/20 transition-colors" style="color: var(--text-primary);" data-filter="theory">
               Theory
             </button>
-            <button id="filter-lab" class="filter-btn px-4 py-2 rounded-lg glass text-white font-medium hover:bg-white/20 transition-colors" data-filter="lab">
+            <button id="filter-lab" class="filter-btn px-4 py-2 rounded-lg glass font-medium hover:bg-white/20 transition-colors" style="color: var(--text-primary);" data-filter="lab">
               Lab
             </button>
           </div>
         </div>
-        <div class="mt-3 text-sm text-white/70">
-          Found <span id="course-count" class="font-bold text-white">9</span> courses
+        <div class="mt-3 text-sm" style="color: var(--text-secondary);">
+          Found <span id="course-count" class="font-bold" style="color: var(--text-primary);">9</span> courses
         </div>
       </div>
 
       <!-- Core Psychology Section (MPC) -->
       <section id="core-psychology" class="mb-16">
         <div class="flex items-center mb-8">
-          <div class="w-1 h-12 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full mr-4"></div>
+          <div class="w-1 h-12 bg-gradient-to-b from-[var(--gold)] to-[var(--green)] rounded-full mr-4"></div>
           <div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Core Psychology</h2>
-            <p class="text-white/80 mt-1">MPC - Master of Arts in Psychology (Theory Courses)</p>
+            <h2 class="text-3xl sm:text-4xl font-extrabold" style="color: var(--text-primary);">Core Psychology</h2>
+            <p class="mt-1" style="color: var(--text-secondary);">MPC - Master of Arts in Psychology (Theory Courses)</p>
           </div>
         </div>
 
@@ -338,45 +344,45 @@
           
           <!-- MPC-001 Card -->
           <a href="MPC-001.html" class="course-card glass-card rounded-2xl shadow-xl overflow-hidden group" data-category="theory" data-code="MPC-001" data-title="Cognitive Psychology" data-keywords="creativity intelligence language memory learning">
-            <div class="h-2 bg-gradient-to-r from-green-400 to-teal-500"></div>
+            <div class="h-2 bg-gradient-to-r from-[var(--green)] to-[var(--accent)]"></div>
             <div class="p-6">
               <div class="flex items-start justify-between mb-4">
                 <div class="flex items-center space-x-3">
                   <div class="text-4xl">🧠</div>
                   <div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">MPC-001</h3>
+                    <h3 class="text-xl font-bold font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">MPC-001</h3>
                     <span class="badge-theory text-xs text-white px-2 py-1 rounded-full font-medium">Theory</span>
                   </div>
                 </div>
               </div>
-              <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Cognitive Psychology, Learning & Memory</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">Explore cognitive processes including attention, memory, language, problem-solving, creativity, and intelligence.</p>
+              <p class="font-medium mb-2" style="color: var(--text-secondary);">Cognitive Psychology, Learning & Memory</p>
+              <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-tertiary);">Explore cognitive processes including attention, memory, language, problem-solving, creativity, and intelligence.</p>
               <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-1 rounded">#Creativity</span>
-                <span class="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-1 rounded">#Intelligence</span>
-                <span class="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-2 py-1 rounded">#Memory</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--green) 15%, transparent); color: var(--text-secondary);">#Creativity</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--blue) 15%, transparent); color: var(--text-secondary);">#Intelligence</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--blue) 15%, transparent); color: var(--text-secondary);">#Memory</span>
               </div>
             </div>
           </a>
 
           <!-- MPC-002 Card -->
           <a href="MPC-002.html" class="course-card glass-card rounded-2xl shadow-xl overflow-hidden group" data-category="theory" data-code="MPC-002" data-title="Life Span Development" data-keywords="development stages theories childhood adolescence">
-            <div class="h-2 bg-gradient-to-r from-blue-400 to-indigo-600"></div>
+            <div class="h-2 bg-gradient-to-r from-[var(--blue)] to-[var(--accent)]"></div>
             <div class="p-6">
               <div class="flex items-start justify-between mb-4">
                 <div class="flex items-center space-x-3">
                   <div class="text-4xl">👶</div>
                   <div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">MPC-002</h3>
+                    <h3 class="text-xl font-bold font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">MPC-002</h3>
                     <span class="badge-theory text-xs text-white px-2 py-1 rounded-full font-medium">Theory</span>
                   </div>
                 </div>
               </div>
-              <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Life Span Development</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">Study human development across the lifespan from infancy to old age, covering major theories and developmental stages.</p>
+              <p class="font-medium mb-2" style="color: var(--text-secondary);">Life Span Development</p>
+              <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-tertiary);">Study human development across the lifespan from infancy to old age, covering major theories and developmental stages.</p>
               <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-1 rounded">#Development</span>
-                <span class="text-xs bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 px-2 py-1 rounded">#Stages</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--blue) 15%, transparent); color: var(--text-secondary);">#Development</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--text-secondary);">#Stages</span>
                 <span class="text-xs bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 px-2 py-1 rounded">#Theories</span>
               </div>
             </div>
@@ -390,39 +396,39 @@
                 <div class="flex items-center space-x-3">
                   <div class="text-4xl">👤</div>
                   <div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">MPC-003</h3>
+                    <h3 class="text-xl font-bold font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">MPC-003</h3>
                     <span class="badge-theory text-xs text-white px-2 py-1 rounded-full font-medium">Theory</span>
                   </div>
                 </div>
               </div>
-              <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Personality: Theories and Assessment</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">Comprehensive study of personality theories, assessment tools, and their applications in understanding individual differences.</p>
+              <p class="font-medium mb-2" style="color: var(--text-secondary);">Personality: Theories and Assessment</p>
+              <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-tertiary);">Comprehensive study of personality theories, assessment tools, and their applications in understanding individual differences.</p>
               <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 px-2 py-1 rounded">#TraitTheory</span>
-                <span class="text-xs bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-2 py-1 rounded">#Assessment</span>
-                <span class="text-xs bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 px-2 py-1 rounded">#Personality</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--red) 15%, transparent); color: var(--text-secondary);">#TraitTheory</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--gold) 15%, transparent); color: var(--text-secondary);">#Assessment</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--gold) 15%, transparent); color: var(--text-secondary);">#Personality</span>
               </div>
             </div>
           </a>
 
           <!-- MPC-004 Card -->
           <a href="MPC-004.html" class="course-card glass-card rounded-2xl shadow-xl overflow-hidden group" data-category="theory" data-code="MPC-004" data-title="Advanced Social Psychology" data-keywords="social influence group dynamics interpersonal relations">
-            <div class="h-2 bg-gradient-to-r from-purple-400 to-pink-500"></div>
+            <div class="h-2 bg-gradient-to-r from-[var(--gold)] to-[var(--red)]"></div>
             <div class="p-6">
               <div class="flex items-start justify-between mb-4">
                 <div class="flex items-center space-x-3">
                   <div class="text-4xl">👥</div>
                   <div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">MPC-004</h3>
+                    <h3 class="text-xl font-bold font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">MPC-004</h3>
                     <span class="badge-theory text-xs text-white px-2 py-1 rounded-full font-medium">Theory</span>
                   </div>
                 </div>
               </div>
-              <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Advanced Social Psychology</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">Examine social behavior, group dynamics, interpersonal relationships, and social influence processes.</p>
+              <p class="font-medium mb-2" style="color: var(--text-secondary);">Advanced Social Psychology</p>
+              <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-tertiary);">Examine social behavior, group dynamics, interpersonal relationships, and social influence processes.</p>
               <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 px-2 py-1 rounded">#SocialInfluence</span>
-                <span class="text-xs bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 px-2 py-1 rounded">#GroupDynamics</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--blue) 15%, transparent); color: var(--text-secondary);">#SocialInfluence</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--red) 15%, transparent); color: var(--text-secondary);">#GroupDynamics</span>
                 <span class="text-xs bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-700 dark:text-fuchsia-300 px-2 py-1 rounded">#Relationships</span>
               </div>
             </div>
@@ -430,23 +436,23 @@
 
           <!-- MPC-005 Card -->
           <a href="MPC-005.html" class="course-card glass-card rounded-2xl shadow-xl overflow-hidden group" data-category="theory" data-code="MPC-005" data-title="Research Methods" data-keywords="experimental design qualitative research data analysis">
-            <div class="h-2 bg-gradient-to-r from-yellow-400 to-amber-500"></div>
+            <div class="h-2 bg-gradient-to-r from-[var(--gold)] to-[var(--gold)]"></div>
             <div class="p-6">
               <div class="flex items-start justify-between mb-4">
                 <div class="flex items-center space-x-3">
                   <div class="text-4xl">📊</div>
                   <div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">MPC-005</h3>
+                    <h3 class="text-xl font-bold font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">MPC-005</h3>
                     <span class="badge-theory text-xs text-white px-2 py-1 rounded-full font-medium">Theory</span>
                   </div>
                 </div>
               </div>
-              <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Research Methods in Psychology</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">Learn research methodologies, experimental design, qualitative and quantitative approaches in psychological research.</p>
+              <p class="font-medium mb-2" style="color: var(--text-secondary);">Research Methods in Psychology</p>
+              <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-tertiary);">Learn research methodologies, experimental design, qualitative and quantitative approaches in psychological research.</p>
               <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 px-2 py-1 rounded">#Research</span>
-                <span class="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-1 rounded">#Methodology</span>
-                <span class="text-xs bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-2 py-1 rounded">#Design</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--gold) 15%, transparent); color: var(--text-secondary);">#Research</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--gold) 15%, transparent); color: var(--text-secondary);">#Methodology</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--gold) 15%, transparent); color: var(--text-secondary);">#Design</span>
               </div>
             </div>
           </a>
@@ -459,17 +465,17 @@
                 <div class="flex items-center space-x-3">
                   <div class="text-4xl">📈</div>
                   <div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">MPC-006</h3>
+                    <h3 class="text-xl font-bold font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">MPC-006</h3>
                     <span class="badge-theory text-xs text-white px-2 py-1 rounded-full font-medium">Theory</span>
                   </div>
                 </div>
               </div>
-              <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Statistics in Psychology</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">Master statistical concepts and techniques used in psychological research, including descriptive and inferential statistics.</p>
+              <p class="font-medium mb-2" style="color: var(--text-secondary);">Statistics in Psychology</p>
+              <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-tertiary);">Master statistical concepts and techniques used in psychological research, including descriptive and inferential statistics.</p>
               <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 px-2 py-1 rounded">#Statistics</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--text-secondary);">#Statistics</span>
                 <span class="text-xs bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 px-2 py-1 rounded">#DataAnalysis</span>
-                <span class="text-xs bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 py-1 rounded">#SPSS</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--blue) 15%, transparent); color: var(--text-secondary);">#SPSS</span>
               </div>
             </div>
           </a>
@@ -479,10 +485,10 @@
       <!-- Practical/Lab Components Section (MPCE) -->
       <section id="practical-lab" class="mb-16">
         <div class="flex items-center mb-8">
-          <div class="w-1 h-12 bg-gradient-to-b from-pink-500 to-red-500 rounded-full mr-4"></div>
+          <div class="w-1 h-12 bg-gradient-to-b from-[var(--red)] to-[var(--green)] rounded-full mr-4"></div>
           <div>
-            <h2 class="text-4xl font-extrabold text-white">Practical & Lab Components</h2>
-            <p class="text-white/80 mt-1">MPCE - Master of Arts in Psychology (Practical Courses)</p>
+            <h2 class="text-4xl font-extrabold" style="color: var(--text-primary);">Practical & Lab Components</h2>
+            <p class="mt-1" style="color: var(--text-secondary);">MPCE - Master of Arts in Psychology (Practical Courses)</p>
           </div>
         </div>
 
@@ -491,69 +497,69 @@
           
           <!-- MPCE-011 Card -->
           <a href="MPCE-011.html" class="course-card glass-card rounded-2xl shadow-xl overflow-hidden group" data-category="lab" data-code="MPCE-011" data-title="Psychopathology" data-keywords="mental disorders diagnosis personality disorders substance use">
-            <div class="h-2 bg-gradient-to-r from-red-500 to-pink-500"></div>
+            <div class="h-2 bg-gradient-to-r from-[var(--red)] to-[var(--red)]"></div>
             <div class="p-6">
               <div class="flex items-start justify-between mb-4">
                 <div class="flex items-center space-x-3">
                   <div class="text-4xl">🩺</div>
                   <div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">MPCE-011</h3>
+                    <h3 class="text-xl font-bold font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">MPCE-011</h3>
                     <span class="badge-lab text-xs text-white px-2 py-1 rounded-full font-medium">Lab</span>
                   </div>
                 </div>
               </div>
-              <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Psychopathology</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">Clinical study of mental disorders, diagnostic criteria, assessment methods, and understanding psychopathological conditions.</p>
+              <p class="font-medium mb-2" style="color: var(--text-secondary);">Psychopathology</p>
+              <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-tertiary);">Clinical study of mental disorders, diagnostic criteria, assessment methods, and understanding psychopathological conditions.</p>
               <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 px-2 py-1 rounded">#MentalDisorders</span>
-                <span class="text-xs bg-pink-100 dark:bg-pink-900/30 text-pink-700 dark:text-pink-300 px-2 py-1 rounded">#Diagnosis</span>
-                <span class="text-xs bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 px-2 py-1 rounded">#Assessment</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--red) 15%, transparent); color: var(--text-secondary);">#MentalDisorders</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--red) 15%, transparent); color: var(--text-secondary);">#Diagnosis</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--red) 15%, transparent); color: var(--text-secondary);">#Assessment</span>
               </div>
             </div>
           </a>
 
           <!-- MPCE-012 Card -->
           <a href="MPCE-012.html" class="course-card glass-card rounded-2xl shadow-xl overflow-hidden group" data-category="lab" data-code="MPCE-012" data-title="Psychodiagnostics" data-keywords="assessment testing battery psychological tests">
-            <div class="h-2 bg-gradient-to-r from-yellow-400 to-amber-500"></div>
+            <div class="h-2 bg-gradient-to-r from-[var(--gold)] to-[var(--gold)]"></div>
             <div class="p-6">
               <div class="flex items-start justify-between mb-4">
                 <div class="flex items-center space-x-3">
                   <div class="text-4xl">📋</div>
                   <div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">MPCE-012</h3>
+                    <h3 class="text-xl font-bold font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">MPCE-012</h3>
                     <span class="badge-lab text-xs text-white px-2 py-1 rounded-full font-medium">Lab</span>
                   </div>
                 </div>
               </div>
-              <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Psychodiagnostics</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">Hands-on training in psychological assessment tools, test administration, scoring, and interpretation of diagnostic batteries.</p>
+              <p class="font-medium mb-2" style="color: var(--text-secondary);">Psychodiagnostics</p>
+              <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-tertiary);">Hands-on training in psychological assessment tools, test administration, scoring, and interpretation of diagnostic batteries.</p>
               <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 px-2 py-1 rounded">#Assessment</span>
-                <span class="text-xs bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 px-2 py-1 rounded">#Testing</span>
-                <span class="text-xs bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 px-2 py-1 rounded">#Battery</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--gold) 15%, transparent); color: var(--text-secondary);">#Assessment</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--gold) 15%, transparent); color: var(--text-secondary);">#Testing</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--gold) 15%, transparent); color: var(--text-secondary);">#Battery</span>
               </div>
             </div>
           </a>
 
           <!-- MPCE-013 Card -->
           <a href="MPCE-013.html" class="course-card glass-card rounded-2xl shadow-xl overflow-hidden group" data-category="lab" data-code="MPCE-013" data-title="Psychotherapeutic Methods" data-keywords="therapy cognitive CBT DBT counseling">
-            <div class="h-2 bg-gradient-to-r from-green-400 to-emerald-500"></div>
+            <div class="h-2 bg-gradient-to-r from-[var(--green)] to-[var(--green)]"></div>
             <div class="p-6">
               <div class="flex items-start justify-between mb-4">
                 <div class="flex items-center space-x-3">
                   <div class="text-4xl">💬</div>
                   <div>
-                    <h3 class="text-xl font-bold text-gray-800 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">MPCE-013</h3>
+                    <h3 class="text-xl font-bold font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors">MPCE-013</h3>
                     <span class="badge-lab text-xs text-white px-2 py-1 rounded-full font-medium">Lab</span>
                   </div>
                 </div>
               </div>
-              <p class="text-gray-600 dark:text-gray-300 font-medium mb-2">Psychotherapeutic Methods</p>
-              <p class="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">Practical training in various therapeutic approaches including CBT, DBT, and other evidence-based intervention strategies.</p>
+              <p class="font-medium mb-2" style="color: var(--text-secondary);">Psychotherapeutic Methods</p>
+              <p class="text-sm mb-4 line-clamp-2" style="color: var(--text-tertiary);">Practical training in various therapeutic approaches including CBT, DBT, and other evidence-based intervention strategies.</p>
               <div class="flex flex-wrap gap-2">
-                <span class="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-1 rounded">#Therapy</span>
-                <span class="text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded">#CBT</span>
-                <span class="text-xs bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 px-2 py-1 rounded">#Intervention</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--green) 15%, transparent); color: var(--text-secondary);">#Therapy</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--green) 15%, transparent); color: var(--text-secondary);">#CBT</span>
+                <span class="text-xs px-2 py-1 rounded" style="background-color: color-mix(in srgb, var(--accent) 15%, transparent); color: var(--text-secondary);">#Intervention</span>
               </div>
             </div>
           </a>
@@ -563,8 +569,8 @@
       <!-- No Results Message -->
       <div id="no-results" class="hidden text-center py-16">
         <div class="text-6xl mb-4">🔍</div>
-        <h3 class="text-2xl font-bold text-white mb-2">No courses found</h3>
-        <p class="text-white/70">Try adjusting your search terms or filters</p>
+        <h3 class="text-2xl font-bold mb-2" style="color: var(--text-primary);">No courses found</h3>
+        <p style="color: var(--text-secondary);">Try adjusting your search terms or filters</p>
       </div>
     </div>
   </main>
@@ -575,10 +581,10 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- About -->
         <div>
-          <h3 class="text-xl font-bold text-white mb-4 flex items-center">
+          <h3 class="text-xl font-bold mb-4 flex items-center" style="color: var(--text-primary);">
             <span class="mr-2">🧠</span> IGNOU Psychology
           </h3>
-          <p class="text-white/70 text-sm leading-relaxed">
+          <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
             Comprehensive study resources for IGNOU MA Psychology students. 
             Designed to help you excel in both theoretical and practical components.
           </p>
@@ -586,33 +592,33 @@
         
         <!-- Quick Links -->
         <div>
-          <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+          <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Quick Links</h3>
           <ul class="space-y-2 text-sm">
-            <li><a href="#core-psychology" class="text-white/70 hover:text-white transition-colors">Core Psychology (MPC)</a></li>
-            <li><a href="#practical-lab" class="text-white/70 hover:text-white transition-colors">Practical Labs (MPCE)</a></li>
-            <li><a href="#" class="text-white/70 hover:text-white transition-colors">About</a></li>
-            <li><a href="#" class="text-white/70 hover:text-white transition-colors">Contact</a></li>
+            <li><a href="#core-psychology" class="hover:text-[var(--accent)] transition-colors" style="color: var(--text-secondary);">Core Psychology (MPC)</a></li>
+            <li><a href="#practical-lab" class="hover:text-[var(--accent)] transition-colors" style="color: var(--text-secondary);">Practical Labs (MPCE)</a></li>
+            <li><a href="#" class="hover:text-[var(--accent)] transition-colors" style="color: var(--text-secondary);">About</a></li>
+            <li><a href="#" class="hover:text-[var(--accent)] transition-colors" style="color: var(--text-secondary);">Contact</a></li>
           </ul>
         </div>
         
         <!-- Credits -->
         <div>
-          <h3 class="text-xl font-bold text-white mb-4">Credits</h3>
-          <p class="text-white/70 text-sm leading-relaxed">
+          <h3 class="text-xl font-bold mb-4" style="color: var(--text-primary);">Credits</h3>
+          <p class="text-sm leading-relaxed" style="color: var(--text-secondary);">
             Compiled by Shirish<br>
             Open Source Project<br>
             For educational purposes only
           </p>
           <div class="mt-4 flex space-x-4">
-            <a href="#" class="text-white/70 hover:text-white transition-colors" aria-label="GitHub">
+            <a href="#" class="hover:text-[var(--accent)] transition-colors" aria-label="GitHub" style="color: var(--text-secondary);">
               <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.24-.729-.534-1.87-1.159-3.591 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.62 1.724.333 2.861.094 3.591.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             </a>
           </div>
         </div>
       </div>
       
-      <div class="border-t border-white/20 mt-8 pt-8 text-center">
-        <p class="text-white/60 text-sm">
+      <div class="border-t mt-8 pt-8 text-center" style="border-color: var(--line);">
+        <p class="text-sm" style="color: var(--text-tertiary); text-sm">
           © 2024 IGNOU Psychology Study Maps. Based on IGNOU curriculum. 
           <span class="mx-2">•</span>
           Made with ❤️ for students
@@ -699,12 +705,12 @@
     btn.addEventListener('click', () => {
       // Remove active class from all buttons
       filterBtns.forEach(b => {
-        b.classList.remove('active', 'bg-indigo-600', 'text-white');
+        b.classList.remove('active', 'bg-[var(--accent)]', 'text-white');
         b.classList.add('glass');
       });
       
       // Add active class to clicked button
-      btn.classList.add('active', 'bg-indigo-600', 'text-white');
+      btn.classList.add('active', 'bg-[var(--accent)]', 'text-white');
       btn.classList.remove('glass');
       
       // Set current filter
