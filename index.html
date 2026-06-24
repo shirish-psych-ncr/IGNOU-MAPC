@@ -36,9 +36,40 @@
     }
   </script>
   <style>
-    /* Dynamic Gradient Background */
+    /* Match MPC/MPCE pages color theme */
+    :root {
+      --bg: #f5f1e8;
+      --surface: #fffdf8;
+      --surface-strong: #f9f5ed;
+      --ink: #20231f;
+      --muted: #697063;
+      --line: #ddd5c7;
+      --accent: #146c70;
+      --accent-strong: #0d4b4e;
+      --gold: #c4842f;
+      --green: #4e7d52;
+      --red: #b64d4b;
+      --blue: #4f6f91;
+    }
+    
+    body.dark {
+      --bg: #181a18;
+      --surface: #232620;
+      --surface-strong: #2c3029;
+      --ink: #f2eee4;
+      --muted: #b8bdad;
+      --line: #3f463b;
+      --accent: #66c0bd;
+      --accent-strong: #92d8d5;
+      --gold: #dda85a;
+      --green: #82b884;
+      --red: #df817e;
+      --blue: #91acd0;
+    }
+
+    /* Dynamic Gradient Background - matching course pages */
     .animated-bg {
-      background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
+      background: linear-gradient(180deg, rgba(20, 108, 112, 0.1), var(--bg));
       background-size: 400% 400%;
       animation: gradientShift 15s ease infinite;
     }
@@ -49,35 +80,39 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* Glassmorphism Effect */
+    /* Glassmorphism Effect - updated for course page theme */
     .glass {
-      background: rgba(255, 255, 255, 0.15);
+      background: color-mix(in srgb, var(--surface) 94%, transparent);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 60px rgba(42, 35, 24, 0.13);
     }
 
     .dark .glass {
-      background: rgba(17, 24, 39, 0.7);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: color-mix(in srgb, var(--surface) 96%, transparent);
+      border: 1px solid var(--line);
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.35);
     }
 
     .glass-card {
-      background: rgba(255, 255, 255, 0.9);
+      background: color-mix(in srgb, var(--surface) 94%, transparent);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 38px rgba(42, 35, 24, 0.09);
+      transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .dark .glass-card {
-      background: rgba(31, 41, 55, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: color-mix(in srgb, var(--surface) 94%, transparent);
+      border: 1px solid var(--line);
     }
 
     .glass-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      transform: translateY(-3px);
+      box-shadow: 0 22px 60px rgba(42, 35, 24, 0.21);
+      border-color: var(--accent);
     }
 
     /* Custom Scrollbar */
@@ -110,31 +145,54 @@
 
     /* Search Input Focus */
     .search-input:focus {
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.5);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
     }
 
-    .dark .search-input:focus {
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
-    }
-
-    /* Badge Styles */
+    /* Badge Styles - matching course pages */
     .badge-theory {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, var(--gold) 0%, var(--accent) 100%);
     }
 
     .badge-lab {
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      background: linear-gradient(135deg, var(--red) 0%, var(--green) 100%);
     }
 
     .badge-project {
-      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      background: linear-gradient(135deg, var(--blue) 0%, var(--accent) 100%);
     }
 
     /* Smooth Transitions */
     * {
       transition-property: background-color, border-color, color, fill, stroke;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      transition-duration: 300ms;
+      transition-duration: 180ms;
+    }
+    
+    /* Mobile responsive adjustments */
+    @media (max-width: 860px) {
+      .hero-title {
+        font-size: clamp(2.5rem, 8vw, 4rem) !important;
+      }
+      .grid-cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+    }
+    
+    @media (max-width: 560px) {
+      .hero-title {
+        font-size: clamp(2rem, 10vw, 3rem) !important;
+      }
+      .grid-cols-3 {
+        grid-template-columns: 1fr !important;
+      }
+      .nav-container {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+      }
+      .hero-section {
+        padding-top: 60px !important;
+      }
     }
   </style>
 </head>
@@ -154,7 +212,7 @@
 
   <!-- Navigation Bar -->
   <nav class="fixed top-0 left-0 right-0 z-40 glass shadow-lg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="nav-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center space-x-3">
           <span class="text-3xl">🧠</span>
@@ -176,12 +234,12 @@
   </nav>
 
   <!-- Header / Hero Section -->
-  <header class="relative min-h-screen flex items-center justify-center px-4 text-center pt-16">
+  <header class="hero-section relative min-h-screen flex items-center justify-center px-4 text-center pt-16">
     <div class="max-w-4xl mx-auto">
       <div class="floating mb-8">
         <span class="text-8xl md:text-9xl">🎓</span>
       </div>
-      <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
+      <h1 class="hero-title text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-lg">
         IGNOU Psychology<br>
         <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-200 via-pink-200 to-purple-200">
           Study Map Hub
@@ -204,7 +262,7 @@
       </div>
       
       <!-- Quick Stats -->
-      <div class="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto">
+      <div class="mt-16 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-lg mx-auto">
         <div class="glass rounded-xl p-4">
           <div class="text-3xl font-bold text-white">9</div>
           <div class="text-sm text-white/80">Courses</div>
@@ -270,7 +328,7 @@
         <div class="flex items-center mb-8">
           <div class="w-1 h-12 bg-gradient-to-b from-indigo-500 to-purple-500 rounded-full mr-4"></div>
           <div>
-            <h2 class="text-4xl font-extrabold text-white">Core Psychology</h2>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Core Psychology</h2>
             <p class="text-white/80 mt-1">MPC - Master of Arts in Psychology (Theory Courses)</p>
           </div>
         </div>
